@@ -1,0 +1,22 @@
+<div class="modal-body">
+    <form novalidate="" #tileSpecificationForm="ngForm">
+        <label>Tile Width</label>
+        <input name="width" ngModel #width="ngModel" required id="width" placeholder="width  in px" type="text">
+        <small class="form-text text-muted danger" *ngIf="!width.valid && (width.dirty || width.touched)">Please Enter
+            Width!</small>
+        <label>Tile Height</label>
+        <input name="height" ngModel #height="ngModel" required id="height" placeholder="height in px" type="text">
+        <small class="form-text text-muted danger" *ngIf="!height.valid && (height.dirty || height.touched)">Please
+            Enter
+            Height!</small>
+        <label>Tile Margin</label>
+        <input name="margin" ngModel #margin="ngModel" required id="margin" placeholder="margin in px" type="text">
+        <small class="form-text text-muted danger" *ngIf="!margin.valid && (margin.dirty || margin.touched)">Please
+            Enter Margin!</small>
+        <input type="button" value="STORE" [disabled]="!tileSpecificationForm.valid"
+            (click)='store(tileSpecificationForm)'>
+        <input type="button" value="UPDATE" [disabled]="!tileSpecificationForm.valid"
+            (click)='update(tileSpecificationForm)'>
+        <div class="clear"></div>
+    </form>
+</div>

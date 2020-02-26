@@ -1,0 +1,31 @@
+<div class=" heading">
+    <div class="title align-left">Customise</div>
+    <!-- <div class="editer" (click)="openFormModal()" [ngClass]="{'close':visible}"></div> -->
+
+    <div class="float-right tool editer" *ngIf="visible" (click)="openFormModal()">
+    </div>
+    <div class="float-right tool close" *ngIf="!visible" (click)="close()">
+    </div>
+</div>
+
+<div class="container">
+    <div class="row list">
+        <div *ngFor="let value of data" class="size-value tile" cardResize [cardMargin]="'10'" [cardHeight]="'195'"
+            [cardWidth]="'300'">
+            <div class="card-title tile-title">
+                <div class="triangle-bottomleft"></div>
+                {{value.title}}
+            </div>
+            <div class="center-text">{{value.id}}</div>
+            <div class="star" (click)="toggleFavorite(value)" [ngClass]="{'hilight':value.favorite}"
+                title="click to like or unlike"></div>
+            <div class="info-holder" (click)="openInfoModal(value)">
+                <div class="info">info</div>
+            </div>
+            <hr class="line">
+            <div class="open-holder">
+                <div (click)="showDetails(value)" class="open">open</div>
+            </div>
+        </div>
+    </div>
+</div>

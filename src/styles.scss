@@ -1,0 +1,22 @@
+@import 'variables';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.form-modal-class > .modal-dialog{
+    left: 48% !important;
+    top: -3% !important;
+}
+
+.form-modal-class-backdrop { 
+    display: none!important;    
+}
+
+.form-modal-class .modal-content{
+    background-color: rgba(0,0,0, 0.4); 
+    transform: translate(-0%, 24%);
+    color:white;
+    width:54%;
+}
+
+.info-modal-class > .modal-dialog{
+    top: 100px !important;
+}
