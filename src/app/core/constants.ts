@@ -1,0 +1,5 @@
+export const SPECIFICATION = {
+   WIDTH:300,
+   HEIGHT:200,
+   MARGIN:20
+};

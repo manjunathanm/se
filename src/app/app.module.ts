@@ -12,6 +12,7 @@ import { SetCardSizeDirective } from './shared/directive/set-card-size.directive
 import { DetailComponent } from './component/detail/detail.component';
 import { InfoModalComponent } from './shared/info-modal/info-modal.component'
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     FormsModule,
+    HttpClientModule
   ],
   entryComponents: [FormModalComponent, InfoModalComponent],
   providers: [NgbActiveModal],

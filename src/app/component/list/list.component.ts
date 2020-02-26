@@ -1,36 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormModalComponent } from 'src/app/shared/form-modal/form-modal.component';
 import { Router } from '@angular/router';
 import { InfoModalComponent } from 'src/app/shared/info-modal/info-modal.component';
+import { TileService } from 'src/app/shared/tile-service/tile.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, private router: Router) { }
-
+  specifciation:any = {};
   visible = true;
   modalRef;
-  data = [
-    {
-      id: 1,
-      title: "title1",
-      content: 'content of the tile 1',
-      favorite: false
-    }
-    ,
-    {
-      id: 2,
-      title: "title2",
-      content: 'content of the tile 2',
-      favorite: true
-    }
+  data; 
 
-  ]
+  constructor(
+    private modalService: NgbModal, 
+    private router: Router,
+    private tileService:TileService
+    ) { }
+
+  ngOnInit(){
+    this.tileService.readData().subscribe( data => {
+      this.data = data;
+    })
+  }
 
   openFormModal() {
     this.visible = false

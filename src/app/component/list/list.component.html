@@ -1,7 +1,5 @@
 <div class=" heading">
     <div class="title align-left">Customise</div>
-    <!-- <div class="editer" (click)="openFormModal()" [ngClass]="{'close':visible}"></div> -->
-
     <div class="float-right tool editer" *ngIf="visible" (click)="openFormModal()">
     </div>
     <div class="float-right tool close" *ngIf="!visible" (click)="close()">
@@ -10,8 +8,7 @@
 
 <div class="container">
     <div class="row list">
-        <div *ngFor="let value of data" class="size-value tile" cardResize [cardMargin]="'10'" [cardHeight]="'195'"
-            [cardWidth]="'300'">
+        <div *ngFor="let value of data" class="size-value tile" cardResize>
             <div class="card-title tile-title">
                 <div class="triangle-bottomleft"></div>
                 {{value.title}}
